@@ -1,3 +1,5 @@
+#lang planet neil/sicp
+
 (define (square x)
   * x x)
 
@@ -16,12 +18,18 @@
 (define (timed-prime-test n)
   (newline)
   (display n)
-  (start-prime-test n (current-milliseconds)))
+  (start-prime-test n (runtime)))
 (define (start-prime-test n start-time)
   (if (prime? n)
-      (report-prime (- (current-milliseconds) start-time))))
+      (report-prime (- (runtime) start-time))))
 (define (report-prime elapsed-time)
   (display " *** ")
   (display elapsed-time))
 
-(timed-prime-test 555555)
+(define (search-for-primes start end)
+  (timed-prime-test start)
+  (if (= start end)
+      (display "we're done")
+      (timed-prime-test (+ start 1))))
+
+(search-for-primes 10 100)
