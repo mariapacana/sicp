@@ -1,7 +1,7 @@
 #lang planet neil/sicp
 
 (define (square x)
-  * x x)
+  (* x x))
 
 (define (next n)
   (if (= n 2)
