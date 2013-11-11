@@ -23,7 +23,7 @@
   (display ", b = ")
   (display b)
   (define (iter a result)
-    (if (= a 0)
+    (if (= a result)
         result
-        (iter a (+ (next a) result))))
+        (iter (next a) (+ a result))))
   (iter a b))
