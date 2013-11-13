@@ -31,12 +31,8 @@
 (define (cube x)
   (* x x x))
 
-(define (cubic-eqn a b c y)
-  (lambda (x)
-    (- (+ (cube x) (* a (square x)) (* b x) c) y))) 
-
 (define (cubic a b c)
-  (newtons-method 
-   (lambda (y)
-    (cubic-eqn a b c y)) 1.0))
+  (lambda (x)
+    (+ (cube x) (* a (square x)) (* b x) c)))
 
+(newtons-method (cubic 1 2 1) 1.0)
