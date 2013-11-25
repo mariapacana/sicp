@@ -1,5 +1,7 @@
 #lang racket
 
+
+; helper methods
 (define (make-point x-point y-point)
   (cons x-point y-point))
 
@@ -32,7 +34,3 @@
   (display ",")
   (display (y-point p))
   (display ")"))
-
-(define a (make-point 1 2))
-(define b (make-point 0 3))
-(define seg (make-segment a b))
